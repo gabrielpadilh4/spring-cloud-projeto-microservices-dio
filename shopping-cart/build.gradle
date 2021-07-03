@@ -12,6 +12,16 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    set('springCloudVersion', "Hoxton.SR3")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
